@@ -6,13 +6,19 @@ const API_URL = process.env.API_URL
 const headers = {
 'Content-Type': 'aplication/json',
 }
-export async function criarMarca(formData:FormData){
+export type marcaFormState = {
+    nome : string
+}
+
+export async function criarMarca(prevState:marcaFormState,formData:FormData){
     let response = await fetch(`${API_URL}/marca`,{
        
         headers,
  method:'POST',
 body:stringifyFormData(formData)
 })
+
+return prevState
 
 redirect ('/cadastro/marcas/')
 }
