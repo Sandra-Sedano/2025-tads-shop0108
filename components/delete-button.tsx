@@ -14,12 +14,13 @@ import { Button } from "@/components/ui/button"
 import { Trash } from "lucide-react"
 
 type DeleteButtonProps = {
-  id: number
+  id: number,
+  onClick: () => void
 }
 
 
-export function DeleteButton({ id }: DeleteButtonProps) {
-  const handleDelete = async ()=>{
+export function DeleteButton({ id, onClick }: DeleteButtonProps) {
+  const handleDelete = async () => {
     alert('Exclusao de registro solicitada')
   }
   return (
@@ -38,8 +39,8 @@ export function DeleteButton({ id }: DeleteButtonProps) {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
-      
-          <AlertDialogAction onClick={DeleteButton}>Continuar</AlertDialogAction>
+
+          <AlertDialogAction onClick={onClick}>Continuar</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

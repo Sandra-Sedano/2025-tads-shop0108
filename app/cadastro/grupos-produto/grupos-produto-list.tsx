@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Edit, Trash } from "lucide-react";
+import { toast } from "sonner";
 
 export function GruposProdutoList() {
   return (
@@ -34,8 +35,13 @@ export function GruposProdutoList() {
                 <Button size="icon">
                   <Edit />
                 </Button>
-              <DeleteButton onClick={() => handleDelete(marca.id)} />
-              
+                <DeleteButton id={0} onClick={() => toast("teste", {
+                  action: {
+                    label: "OK",
+                    onClick: () => { }
+                  }
+                })} />
+
               </div>
             </TableCell>
           </TableRow>

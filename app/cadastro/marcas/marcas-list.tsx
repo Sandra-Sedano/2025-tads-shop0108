@@ -10,14 +10,15 @@ import {
 } from "@/components/ui/table";
 import { Marca } from "@/models/marca";
 import { Edit, Trash } from "lucide-react";
+import { toast } from "sonner";
 
 
 export async function MarcasList() {
 
-   const response = await fetch(`${process.env.API_URL}/marca`,{
-     cache:'no-store'
-   })
-   const marcas:Marca[] = await response.json();
+  const response = await fetch(`${process.env.API_URL}/marca`, {
+    cache: 'no-store'
+  })
+  const marcas: Marca[] = await response.json();
 
   function handleDelete(id: number) {
     throw new Error("Function not implemented.");
@@ -43,7 +44,12 @@ export async function MarcasList() {
                   <Button size="icon">
                     <Edit />
                   </Button>
-               <DeleteButton id={marca.id} />
+                  <DeleteButton id={marca.id} onClick={() => toast("Marca excluida com sucesso.", {
+                    action: {
+                      label: "OK",
+                      onClick: () => { }
+                    }
+                  })} />
 
                 </div>
               </TableCell>
