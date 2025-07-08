@@ -23,11 +23,12 @@ export function MarcasForm() {
           <Input name="nome" />
         </div>
         <div className="mt-4 flex justify-end gap-2">
-          <Link href="/cadastro/marcas">
-            <Button variant="outline" type="button">
-              Cancelar
+          
+            <Button variant="outline" type="button" asChild>
+              <Link href="/cadastro/marcas"> Cancelar</Link>
+              
             </Button>
-          </Link>
+          
           <SaveButton isPending={isPending}  />
           </div>
       </form>
