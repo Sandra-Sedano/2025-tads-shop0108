@@ -20,7 +20,7 @@ type DeleteButtonProps = {
 
 
 export function DeleteButton({ id, onClick }: DeleteButtonProps) {
-  const handleDelete = async () => {
+  const  = handleDelete = async () => {
     alert('Exclusao de registro solicitada')
   }
   return (
