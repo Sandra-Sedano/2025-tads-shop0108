@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table";
 import { Marca } from "@/models/marca";
 import { Edit, Trash } from "lucide-react";
+import Link from "next/link";
 import { toast } from "sonner";
 
 
@@ -20,7 +21,7 @@ export async function MarcasList() {
   })
   const marcas: Marca[] = await response.json();
 
-  function handleDelete(id: number) {
+  function handleDelete(id: string) {
     throw new Error("Function not implemented.");
   }
 
@@ -41,8 +42,8 @@ export async function MarcasList() {
               <TableCell>{marca.nome}</TableCell>
               <TableCell>
                 <div className="flex gap-2">
-                  <Button size="icon">
-                    <Edit />
+                  <Button size="icon" asChild>
+                   <Link href={`/cadastro/marcas/editar/${marca.id}`}><Edit/></Link> 
                   </Button>
                   <DeleteButton id={marca.id} onClick={() => toast("Marca excluida com sucesso.", {
                     action: {
