@@ -1,4 +1,5 @@
 'use client'
+import { deletarMarca } from "@/app/actions/marca-actions"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -14,14 +15,13 @@ import { Button } from "@/components/ui/button"
 import { Trash } from "lucide-react"
 
 type DeleteButtonProps = {
-  id: number,
-  onClick: () => void
+  id: string
 }
 
 
-export function DeleteButton({ id, onClick }: DeleteButtonProps) {
+export function DeleteButton({ id }: DeleteButtonProps) {
   const   handleDelete = async () => {
-    alert('Exclusao de registro solicitada')
+     await deletarMarca(id)
   }
   return (
     <AlertDialog>
@@ -40,7 +40,7 @@ export function DeleteButton({ id, onClick }: DeleteButtonProps) {
         <AlertDialogFooter>
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
 
-          <AlertDialogAction onClick={onClick}>Continuar</AlertDialogAction>
+          <AlertDialogAction onClick={handleDelete}>Continuar</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

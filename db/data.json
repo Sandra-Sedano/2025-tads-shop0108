@@ -1,13 +1,5 @@
 {
-  "marcas": [
-    {
-      "id": "1",
-      "nome": "Samsung"
-    },
-    {
-      "id": "2",
-      "nome": "Apple"
-    },
+  "marca": [
     {
       "id": "3",
       "nome": "Sony"
@@ -43,10 +35,6 @@
     {
       "id": "fddc",
       "nome": "teste 1"
-   },
-    {
-      "id": "9584",
-      "nome": "Philco"
     }
   ]
 }

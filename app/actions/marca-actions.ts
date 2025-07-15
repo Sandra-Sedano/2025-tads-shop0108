@@ -37,7 +37,7 @@ export async function editarMarca(prevState: marcaFormState, formData: FormData)
     redirect('/cadastro/marcas/')
 }
 
-export async function deletarMarca(id: number) {
+export async function deletarMarca(id: string) {
     let response = fetch(`${API_URL}/marca/${id}`, {
         method: 'DELETE',
     })
