@@ -10,7 +10,8 @@ import Link from "next/link";
 export const columns: ColumnDef<Marca>[] = [
     {
         accessorKey: "id",
-        header: "ID",
+        header: ()=> <div className="w-8">ID</div>,
+ 
     },
     {
         accessorKey: "nome",
